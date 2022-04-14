@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    display: flex;
+    justify-content:center;
+}
+.App{
+    width: 800px;
+}
+.announcement{
+    display: flex;
+    padding: 15px;
+    border: 2px solid red;
+    margin-top:15px;
+    justify-content:space-between;
+    align-items:center;
+}
+.remove-btn {
+    margin-right: 0.5rem;
+  }
+  
+  .announcement-enter {
+    transform: translatex(-350px);
+  }
+  .announcement-enter-active {
+   transform: translatex(0px);
+    transition: all 500ms ease-in;
+  }F
+  .announcement-exit {
+    opacity: 1;
+  }
+  .announcement-exit-active {
+    transform: translatex(-350px);
+    transition: all 500ms ease-in;
+  }
+  .announcement_btn button {
+  margin-left: 8px;
+  }
