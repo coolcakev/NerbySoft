@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v5dnOyJVL4YZmrXn7wy1gfXf9fPxkbf6Wpi6cWDY7xuxV0u8Opq/AHrTjQB3EqQ91Q/C4Kn/j8oduWrH2ccOIQ==",
+  "dgSpecHash": "F5LVMKQasMyBv6FcLeGvsGSTfRS88WDWoXaUPQixr5uCeifdAJg8wMIbM3prF1gR4vacp/62s7exckv3Z0J31Q==",
   "success": true,
-  "projectFilePath": "G:\\asp net project\\NearbySoft\\nedrysoft_TestTask asp net + react\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
+  "projectFilePath": "G:\\asp net project\\NearbySoft\\NerbySoft\\asp_net_+_react\\asp_net\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vital\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\vital\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

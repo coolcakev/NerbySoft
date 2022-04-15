@@ -5889,11 +5889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\asp net project\\NearbySoft\\nedrysoft_TestTask asp net + react\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
+      "projectUniqueName": "G:\\asp net project\\NearbySoft\\NerbySoft\\asp_net_+_react\\asp_net\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
       "projectName": "nedrysoft_TestTask",
-      "projectPath": "G:\\asp net project\\NearbySoft\\nedrysoft_TestTask asp net + react\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
+      "projectPath": "G:\\asp net project\\NearbySoft\\NerbySoft\\asp_net_+_react\\asp_net\\nedrysoft_TestTask\\nedrysoft_TestTask.csproj",
       "packagesPath": "C:\\Users\\vital\\.nuget\\packages\\",
-      "outputPath": "G:\\asp net project\\NearbySoft\\nedrysoft_TestTask asp net + react\\nedrysoft_TestTask\\obj\\",
+      "outputPath": "G:\\asp net project\\NearbySoft\\NerbySoft\\asp_net_+_react\\asp_net\\nedrysoft_TestTask\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vital\\AppData\\Roaming\\NuGet\\NuGet.Config",
