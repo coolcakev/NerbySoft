@@ -44,9 +44,9 @@ namespace asp_net_mvc.Controllers
         }
 
         [HttpPost("Delete/{announcementId}")]
-        public IActionResult Delete(int announcementId)
+        public async Task< IActionResult> Delete(int announcementId)
         {
-             _announsmentService.Delete(announcementId);
+           await  _announsmentService.Delete(announcementId);
             return Ok();
         }
 
