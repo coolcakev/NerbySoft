@@ -9,7 +9,7 @@ export default function ViewAnnouncement(props) {
             <h2>Description</h2>
             <p>{props.description}</p>
             <h2>CreationDate</h2>
-            <p>{DateHelper.DateFormat( props.dateAdded)}</p>
+            <p>{props.creationDate}</p>
         </div>
     )
 }

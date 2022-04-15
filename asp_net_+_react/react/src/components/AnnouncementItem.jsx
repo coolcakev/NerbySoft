@@ -16,13 +16,13 @@ export default function AnnouncementItem(props) {
                        {props.description}
                     </div>
                     <div>
-                        {DateHelper.DateFormat( props.dateAdded)}
+                        { props.creationDate}
                     </div>
                 </div>
 
                 <div className="announcement_btn">
                     <MyButton  onClick={()=>props.updateModalOpen(props.id)}>Update</MyButton>
-                    <MyButton  onClick={()=>props.viewModalOpen({title:props.title,description:props.description,dateAdded:props.dateAdded})}>View</MyButton>
+                    <MyButton  onClick={()=>props.viewModalOpen({title:props.title,description:props.description,creationDate:props.creationDate})}>View</MyButton>
                     <MyButton  onClick={props.deleteAnnouncement}>delete</MyButton>
                 </div>
 

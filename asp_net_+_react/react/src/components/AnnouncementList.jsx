@@ -6,6 +6,7 @@ import { useFetching } from '../hooks/useFetching';
 import AnnouncementService from '../api/AnnouncementsService';
 
 export default function AnnouncementList(props) {
+    console.log("isTakeListOfAnnouncement AnnouncementList Component : "+props.isTakeListOfAnnouncement)
   
     let [fetchAnnouncements,isAnnouncementsLoading,error]=useFetching(async()=>{       
         let announcements = await AnnouncementService.GetAnnoncments();       
@@ -14,7 +15,8 @@ export default function AnnouncementList(props) {
       useEffect(() => {
         fetchAnnouncements();
     
-      }, []);
+      }, [props.isTakeListOfAnnouncement]);
+      console.log("isTakeListOfAnnouncement AnnouncementList Component : "+props.isTakeListOfAnnouncement)
  
     if (isAnnouncementsLoading) {
         return <Loader />

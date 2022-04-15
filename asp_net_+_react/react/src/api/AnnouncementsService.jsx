@@ -5,7 +5,7 @@ let host=`https://${domain}:${port}/`
 export default class AnnouncementsService {
     static async GetAnnoncments() {
         try {
-            let response = await axios.get(`${host}Announsment/GetAnnounsments`);
+            let response = await axios.get(`${host}Announsment/GetAnnouncements`);
             return response.data;
         }
         catch (e) {

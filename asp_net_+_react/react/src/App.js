@@ -13,19 +13,18 @@ function App() {
   let [announcements, setAnnouncements] = React.useState([]);
   let [visible, setVisible] = React.useState(false)
   let [modalComponent, setModalComponent] = React.useState()
+  let [isTakeListOfAnnouncement,setTakeListOfAnnouncement] = React.useState(0);
   console.log("App render");
 
 
-  function deleteAnnouncement(announcementId) {
-    AnnouncementService.DeleteAnnouncement(announcementId);
-    setAnnouncements(prevAnnouncements =>
-      prevAnnouncements.filter(prevAnnouncement => prevAnnouncement.id !== announcementId)
-    );
+  async function deleteAnnouncement(announcementId) {
+   await AnnouncementService.DeleteAnnouncement(announcementId);
+    setTakeListOfAnnouncement(prevTakeListOfAnnouncement=>prevTakeListOfAnnouncement+1)
   }
   function createModalOpen() {
     setModalComponent(<CreateAnnouncementForm
-      setVisible={setVisible}
-      setAnnouncements={setAnnouncements}
+      setVisible={setVisible}    
+      setTakeListOfAnnouncement={setTakeListOfAnnouncement}
     />)
     setVisible(true);
   }
@@ -33,8 +32,8 @@ function App() {
     setModalComponent(<UpdateAnnouncementForm
       setVisible={setVisible}
       announcementId={announcementId}
-      announcements={announcements}
-      setAnnouncements={setAnnouncements}
+      announcements={announcements}   
+      setTakeListOfAnnouncement={setTakeListOfAnnouncement}
     />)
     setVisible(true);
   }
@@ -44,6 +43,7 @@ function App() {
       {...announcement}
     />)
   }
+  console.log("isTakeListOfAnnouncement App Component : "+isTakeListOfAnnouncement)
   console.log("modalComponent :")
   console.log(modalComponent)
   return (
@@ -58,7 +58,7 @@ function App() {
         {modalComponent}
       </MyModal>
 
-      <AnnouncementList setAnnouncements={setAnnouncements} updateModalOpen={updateModalOpen} deleteAnnouncement={deleteAnnouncement} viewModalOpen={viewModalOpen} announcements={announcements} title={"my list"} />
+      <AnnouncementList isTakeListOfAnnouncement={isTakeListOfAnnouncement} setAnnouncements={setAnnouncements} updateModalOpen={updateModalOpen} deleteAnnouncement={deleteAnnouncement} viewModalOpen={viewModalOpen} announcements={announcements} title={"my list"} />
 
     </div>
   );

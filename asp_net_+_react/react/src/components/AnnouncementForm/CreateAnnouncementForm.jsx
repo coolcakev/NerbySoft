@@ -7,7 +7,7 @@ export default function CreateAnnouncementForm(props) {
     async function createAnnouncement(announcement) {
         props.setVisible(false);
       let createdAnnouncement=  await AnnouncementService.CreateAnnouncement(announcement);
-        props.setAnnouncements(prevAnnouncements=>[...prevAnnouncements,createdAnnouncement]);
+      props.setTakeListOfAnnouncement(prevTakeListOfAnnouncement=>prevTakeListOfAnnouncement+1)
     }
     let textButton = "Create announcement"
     let styleTitleCreateAnnouncementForm = {

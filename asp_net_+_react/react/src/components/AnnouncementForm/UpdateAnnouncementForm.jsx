@@ -8,7 +8,7 @@ export default function UpdateAnnouncementForm(props) {
 
         props.setVisible(false);
         await AnnouncementService.UpdateAnnouncement(updatedAnnouncement)
-        props.setAnnouncements(props.announcements.map(announcement => announcement.id !== props.announcementId ? announcement : updatedAnnouncement));
+       props.setTakeListOfAnnouncement(prevTakeListOfAnnouncement=>prevTakeListOfAnnouncement+1)
     }
     let announcement = props.announcements.find(announcement => announcement.id === props.announcementId);
     let textButton="Create announcement"

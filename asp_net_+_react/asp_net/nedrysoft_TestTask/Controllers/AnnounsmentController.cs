@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using asp_net_mvc.Models.AnnouncementModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using nedrysoft_TestTask.Entity;
 using nedrysoft_TestTask.Models;
+using nedrysoft_TestTask.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,48 +15,39 @@ namespace nedrysoft_TestTask.Controllers
     [Route("[controller]")]
     public class AnnounsmentController : ControllerBase
     {
-        private readonly ApplicationContext repository;
+        private readonly IAnnouncementService _announsmentService;
 
-        public AnnounsmentController(ApplicationContext repository)
+        public AnnounsmentController(IAnnouncementService announsmentService)
         {
-            this.repository = repository;
+            _announsmentService = announsmentService;
         }
-     
-        [HttpGet("GetAnnounsments")]
-        public IEnumerable<Announcement> GetAnnounsments()
-        {           
-            var announcements = repository.Announcements.ToList();            
-            return announcements;
-        }
+        [HttpGet("GetAnnouncements")]
+        public IEnumerable<GetAnnouncementAnnouncementItem> GetAnnouncements()
+        {
+            var announsments = _announsmentService.GetAnnouncements();
+            return announsments;
+        }     
         [HttpPost("Create")]
-        public Announcement Create(Announcement announcement)
+        public async Task<IActionResult> Create([FromBody] CreateAnnouncementModel model)
         {
-            announcement.DateAdded = DateTime.Now;
-            repository.AddAsync(announcement);
-            repository.SaveChanges();
-
-            return announcement;
+            var responseModel = new ResponceCreateAnnouncementModel();
+            await _announsmentService.Create(model, responseModel);
+            return Ok();
         }
 
         [HttpPost("Delete/{announcementId}")]
-        public IActionResult Delete(int announcementId)
+        public async Task<IActionResult> Delete(int announcementId)
         {
-            var announcement = repository.Announcements.SingleOrDefault(announcement => announcement.Id == announcementId);
-            repository.Remove(announcement);
-            repository.SaveChanges();
-
+            await _announsmentService.Delete(announcementId);
             return Ok();
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(Announcement announcement)
+        public async Task<IActionResult> Update([FromBody] UpdateAnnouncementModel model)
         {
-            repository.Announcements.Update(announcement);
-            repository.SaveChanges();
-
+            await _announsmentService.Update(model);
             return Ok();
         }
-
 
 
     }
