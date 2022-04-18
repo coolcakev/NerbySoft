@@ -11,9 +11,14 @@ export default function UpdateAnnouncementForm(props) {
        props.setTakeListOfAnnouncement(prevTakeListOfAnnouncement=>prevTakeListOfAnnouncement+1)
     }
     let announcement = props.announcements.find(announcement => announcement.id === props.announcementId);
-    let textButton="Create announcement"
+    let textButton="Update"
+    let styleTitleCreateAnnouncementForm = {
+        marginBottom: "10px",
+    }
     return (
         <>
+            <h1 style={styleTitleCreateAnnouncementForm}>Update announcement</h1>
+
             <AnnouncementForm AnnouncementMethod={updateAnnouncement} announcement={announcement} textButton={textButton}/>
         </>
     )

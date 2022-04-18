@@ -9,7 +9,7 @@ export default function CreateAnnouncementForm(props) {
       let createdAnnouncement=  await AnnouncementService.CreateAnnouncement(announcement);
       props.setTakeListOfAnnouncement(prevTakeListOfAnnouncement=>prevTakeListOfAnnouncement+1)
     }
-    let textButton = "Create announcement"
+    let textButton = "Create"
     let styleTitleCreateAnnouncementForm = {
         marginBottom: "10px",
     }

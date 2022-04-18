@@ -61,7 +61,7 @@
                 <div class="card-body">
                     <div class="datatable">
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div id="UpdateAnnouncement" class="col-lg-12">
                                 <div class="form-group">
                                     <label for="registerLogin">Title</label>
                                     <input class="form-control" id="UpdateTitle" placeholder="Title" style=" display: block; width: 100%;" type="text" oninput="clearValid(this)" />
@@ -178,7 +178,7 @@
         if (description.value == "")
             setValidationInElement(description, "is-invalid", "Description is emtpy");
 
-        let dialogModel = "CreateTCreateAnnouncementopic";
+        let dialogModel = "CreateAnnouncement";
         let idInputs = getIdInput(dialogModel);
 
         var functionSome = Array.prototype.some;
@@ -229,7 +229,7 @@
 
         validateAnnouncement(title, description);
 
-        let dialogModel = "UpdateTopic";
+        let dialogModel = "UpdateAnnouncement";
         let idInputs = getIdInput(dialogModel);
 
         var functionSome = Array.prototype.some;
